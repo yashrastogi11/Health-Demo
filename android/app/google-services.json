@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1049988656764",
+    "firebase_url": "https://mental-health-app-b024e.firebaseio.com",
+    "project_id": "mental-health-app-b024e",
+    "storage_bucket": "mental-health-app-b024e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1049988656764:android:401a0e228119a2aa",
+        "android_client_info": {
+          "package_name": "com.mental.health"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1049988656764-75r10annpa68e8ajb6lmp1aphv2a0cao.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mental.health",
+            "certificate_hash": "21d55020f3d27f5b13d5f3e811b57703338b77de"
+          }
+        },
+        {
+          "client_id": "1049988656764-pa14h3gqve4elq9dv7gteqjbn4ufe8b8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAuk5yQd1k5fAy9ZRHQS4HMt042VxGXqvU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1049988656764-pa14h3gqve4elq9dv7gteqjbn4ufe8b8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
