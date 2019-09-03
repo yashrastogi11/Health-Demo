@@ -1,0 +1,12 @@
+{
+    "type": "service_account",
+    "project_id": "mental-health-app-b024e",
+    "private_key_id": "8ae0df98ea8b944937311300ae566c3862d49534",
+    "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDbVCwUrfGckvDo\nmthF/qdHmILgYvX2IClFGtkxEnArILchtW2gFiIZjlteRx76QODgy/UrLlCZyc6d\ngSolTlgu+6fagnTmRokeIIYcbE7orXDfGuTNrBROy9Z0GS4zNM0nW9Fyoy2OifUr\nvqrgiqbgRmV2W0JQZDnlfUwf6cDrESz6PZ+PDPbaG48fBKFAQFNUpCviL4VkTlrh\n4nEDhmw5jcAhcNmtCHYoyPeM6QSlQU+tkxYVOekZS+9yb2Y/arkPgcSrMvDmD273\nbgFS3WnILAd3KqkSr1Akl8bED178D7twyCv/AwTTzqpQ0wdbiKh00BgbZdgwyOyw\na9zdA+RNAgMBAAECggEAU0EfPnZMqX+JnPHyOJeSjfXRcDWAYf4RTF8FpL/3/hb8\nDPqec08TgJnuCtp6Ysov0oT5OnvpModNO7Jk+iZECQmTzLkKgMKzl9EGt1FRnrb/\nimDeC0hPqR1s+UL5q4xWd6M93QMd7uZlP0av/G4FLErshsHbaUKyS2+FbvO/PDrj\nvLTmwzsgN/XDxzWyYHlyZagpmiXWOPu2PddlFjeyPjgelF0Y9C3zvAQ7jB1cStho\nHcvB/nLEXB4hNPzzmXeeKiou120tbWM6Iyh2DgF0g6N/J4ZYpkj7+mAddXXp+Zx1\nswVnQCn7fm/okt4YNId87RTRGP+Sn53RPI5dTL11TQKBgQD4ab0u9mR4JLlasvO6\n5470fBBKU37inN9QZzIy1menRYTc4jjbM/OIFI9DIjuMlf9COWmHh3VsUZo5wWQa\nxYWBGJV29IykJyX8FwHTP2X6LbhsqfwdRb85Sn5QZLB+IXB8F/2hzoPImjUru5V3\n/GpRTwxSoZPY8DeQjrEC4IYz+wKBgQDiBwhs+QANpP2lvijm2/ZB3dSV/XbPGkYk\nxsKx2M+xACdB5SszE2lLIJBwTKkpzrqD2wyhzjB4Ds7EYqikjs2/3WYSkSPbde8v\nfVk48syA1DEzji1sMQc9j8Tv1lOTIj2I45cS1Td7ckFyngWUCX5LvVkt4E7eEsJ6\nhCIMJEmOVwKBgDo7d1jB861iVn0XhCElVRKk3qC9z/nJcmQDvPXD4wqINmwdL9za\n4dTdlPPU24bKRss8cCuQKouY2YF+fzvzX6dynt8C1tFISBQ/RHND4mDyRNBcTLiD\n+B6zAsdPwzveFONSMGe05Jmq5Jn64D//UOD8mdPpAqKRNUVS3dXh0jPvAoGAJKhp\nWGsl9BCPRsNJlO+Vx+b3ZIAgNcSYHbzStM9qF9XjiA9n6ze5uwKECoKUaQBrRZlQ\nOinbuI0GQdmSamXyvqxkspwxiZVd/oDA6LiQLFC9zhPAECz/dJ+NnCxRj6pc+oeW\n5+oGvpGwRauVUgYcIqKKBSO9Bs1aF064yulTuK8CgYEAqjdefHjXe9cenq7wrkTa\nMg4TymezzRrZmh0nlVTQ9rLhaoR6T8/kJBVW2djbDgrz6f3FINJ8zkQqNW1ul4lO\nHR/f6nDDY2Pf+/B18Q5g784H2LGLVqbbQnPPworrvcKH9JGzCjop66QaGrSlNYL8\nAzFgCWR48KrOTTJovuds74k=\n-----END PRIVATE KEY-----\n",
+    "client_email": "mental-health-app@mental-health-app-b024e.iam.gserviceaccount.com",
+    "client_id": "109187567039435206435",
+    "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+    "token_uri": "https://oauth2.googleapis.com/token",
+    "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+    "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/mental-health-app%40mental-health-app-b024e.iam.gserviceaccount.com"
+  }
