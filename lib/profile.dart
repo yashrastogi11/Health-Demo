@@ -6,7 +6,6 @@ import 'package:firebase_storage/firebase_storage.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'dart:io';
 import 'dart:math';
-import 'package:flutter_xlider/flutter_xlider.dart';
 
 class Profile extends StatefulWidget {
   @override
@@ -44,7 +43,7 @@ class _ProfileState extends State<Profile> {
   void readLocal() async {
     prefs = await SharedPreferences.getInstance();
     name = prefs.getString('name') ?? '';
-    age = prefs.getString("age") ?? '';
+    age = prefs.getString("age") ?? '1.0';
     // age = _age.toString();
     photoUrl = prefs.getString('photoUrl') ?? '';
 
