@@ -20,7 +20,7 @@ dependencies:
   flutter:
     sdk: flutter
 
-  google_maps_flutter: ^0.5.20+6
+  # google_maps_flutter: ^0.5.20+6
   permission_handler:
   bottom_navy_bar:
   flutter_dialogflow:

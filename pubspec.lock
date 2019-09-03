@@ -116,13 +116,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.5.2"
-  google_maps_flutter:
-    dependency: "direct main"
-    description:
-      name: google_maps_flutter
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "0.5.20+6"
   googleapis_auth:
     dependency: transitive
     description:
