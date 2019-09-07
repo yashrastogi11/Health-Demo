@@ -17,6 +17,26 @@ class _ProfileState extends State<Profile> {
   String name = "";
   String age = "1.0";
   String photoUrl = '';
+  String feet = '0';
+  String inches = '0';
+
+  String dispValue = '';
+
+  List<String> _feet = ['1', '2', '3', '4', '5', '6', '7'];
+  List<String> _inches = [
+    '1',
+    '2',
+    '3',
+    '4',
+    '5',
+    '6',
+    '7',
+    '8',
+    '9',
+    '10',
+    '11',
+    '12'
+  ];
 
   // double _age = 1.0;
 
@@ -47,11 +67,26 @@ class _ProfileState extends State<Profile> {
     // age = _age.toString();
     photoUrl = prefs.getString('photoUrl') ?? '';
 
+    dispValue = prefs.getString('dispValue') ?? '';
+
+    feet = prefs.getString('feet') ?? '';
+    inches = prefs.getString('inches') ?? '';
+
     controllerName = new TextEditingController(text: name);
     controllerAge = new TextEditingController(text: age);
 
     // Force refresh input
     setState(() {});
+  }
+
+  void role(String e) {
+    setState(() {
+      if (e == "1") {
+        dispValue = "1";
+      } else if (e == "2") {
+        dispValue = "2";
+      }
+    });
   }
 
   Future getImage() async {
@@ -119,14 +154,38 @@ class _ProfileState extends State<Profile> {
       isLoading = true;
     });
 
+    try {
+      if (dispValue != "") {
+        if (dispValue == "1") {
+          Firestore.instance.collection("users").document("user").updateData({
+            "gender": "Male",
+          }).then((data) async {
+            await prefs.setString("dispValue", dispValue);
+          });
+        } else if (dispValue == "2") {
+          Firestore.instance.collection("users").document("user").updateData({
+            "gender": "Female",
+          }).then((data) async {
+            await prefs.setString("dispValue", dispValue);
+          });
+        }
+      }
+    } catch (e) {
+      print(e);
+    }
+
     Firestore.instance.collection('users').document("user").updateData({
       'name': name,
       'age': age,
       'photoURL': photoUrl,
+      'height_feet': feet,
+      'height_inches': inches,
     }).then((data) async {
       await prefs.setString('photoUrl', photoUrl);
       await prefs.setString('age', age);
       await prefs.setString('name', name);
+      await prefs.setString('feet', feet);
+      await prefs.setString('inches', inches);
       setState(() {
         photoUrl = photoUrl;
         isLoading = false;
@@ -324,31 +383,6 @@ class _ProfileState extends State<Profile> {
                         bottom: 10.0,
                       ),
                     ),
-                    // Container(
-                    //   child: Theme(
-                    //     data: Theme.of(context).copyWith(
-                    //       primaryColor: Color.fromARGB(255, 130, 200, 58),
-                    //     ),
-                    //     child: TextField(
-                    //       decoration: InputDecoration(
-                    //         hintText: age,
-                    //         contentPadding: EdgeInsets.all(5.0),
-                    //         hintStyle: TextStyle(
-                    //           color: Colors.black,
-                    //         ),
-                    //       ),
-                    //       controller: controllerAge,
-                    //       onChanged: (value) {
-                    //         age = value;
-                    //       },
-                    //       focusNode: focusNodeAge,
-                    //     ),
-                    //   ),
-                    //   margin: EdgeInsets.only(
-                    //     left: 20.0,
-                    //     right: 20.0,
-                    //   ),
-                    // ),
 
                     Slider(
                       value: double.parse(age),
@@ -363,6 +397,160 @@ class _ProfileState extends State<Profile> {
                           age = newValue.toString();
                         });
                       },
+                    ),
+
+                    // Gender
+                    Container(
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: <Widget>[
+                          Text(
+                            'Gender',
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              color: Color.fromARGB(255, 100, 107, 217),
+                              fontSize: 18,
+                            ),
+                          ),
+                        ],
+                      ),
+                      margin: EdgeInsets.only(
+                        left: 10.0,
+                        top: 30.0,
+                        bottom: 10.0,
+                      ),
+                    ),
+                    Container(
+                      width: MediaQuery.of(context).size.width,
+                      height: MediaQuery.of(context).size.height / 5,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          Column(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: <Widget>[
+                              Radio(
+                                value: '1',
+                                groupValue: dispValue,
+                                onChanged: (String e) => role(e),
+                              ),
+                              Container(
+                                width: MediaQuery.of(context).size.width / 2.5,
+                                height: 100,
+                                child: Image(
+                                  image: AssetImage("assets/male.png"),
+                                  fit: BoxFit.contain,
+                                ),
+                              ),
+                            ],
+                          ),
+                          Column(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: <Widget>[
+                              Radio(
+                                value: '2',
+                                groupValue: dispValue,
+                                onChanged: (String e) => role(e),
+                              ),
+                              Container(
+                                width: MediaQuery.of(context).size.width / 2.5,
+                                height: 100,
+                                child: Image(
+                                  image: AssetImage("assets/female.png"),
+                                  fit: BoxFit.contain,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+
+                    // Height
+                    Container(
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: <Widget>[
+                          Text(
+                            'Height',
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              color: Color.fromARGB(255, 100, 107, 217),
+                              fontSize: 18,
+                            ),
+                          ),
+                        ],
+                      ),
+                      margin: EdgeInsets.only(
+                        left: 10.0,
+                        top: 30.0,
+                        bottom: 10.0,
+                      ),
+                    ),
+
+                    Container(
+                      width: MediaQuery.of(context).size.width,
+                      height: 50,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          DropdownButton(
+                            hint: Text(
+                              feet,
+                              style: TextStyle(
+                                fontSize: 16,
+                                color: Colors.black
+                              ),
+                            ),
+                            items: _feet.map((f) {
+                              return DropdownMenuItem(
+                                child: Text(f),
+                                value: f,
+                              );
+                            }).toList(),
+                            onChanged: (String value) {
+                              setState(() {
+                                feet = value;
+                              });
+                            },
+                          ),
+                          Text(
+                            "feet",
+                            style: TextStyle(
+                              fontSize: 16,
+                            ),
+                          ),
+                          SizedBox(
+                            width: MediaQuery.of(context).size.width / 8,
+                          ),
+                          DropdownButton(
+                            hint: Text(
+                              inches,
+                              style: TextStyle(
+                                fontSize: 16,
+                                color: Colors.black,
+                              ),
+                            ),
+                            items: _inches.map((i) {
+                              return DropdownMenuItem(
+                                child: Text(i),
+                                value: i,
+                              );
+                            }).toList(),
+                            onChanged: (String value) {
+                              setState(() {
+                                inches = value;
+                              });
+                            },
+                          ),
+                          Text(
+                            "inches",
+                            style: TextStyle(
+                              fontSize: 16,
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                   ],
                 ),
@@ -389,6 +577,9 @@ class _ProfileState extends State<Profile> {
                         borderRadius: BorderRadius.circular(15)),
                   ),
                   // margin: EdgeInsets.only(top: 50.0, bottom: 50.0),
+                ),
+                SizedBox(
+                  height: 20,
                 ),
               ],
             ),
